@@ -53,6 +53,7 @@
 
     <div class="container" id="app">
         <!--v-model is for binding two data  -->
+        <!-- v-for is for looping -->
         <form name="form" @submit.prevent="registerUser">
             <div class="mb-3">
                 <label for="fname" class="form-label">Full Name</label>
@@ -114,9 +115,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
+
+    <!-- vue is a js framework that's why we use a script -->
     <script>
         new Vue({
             el: "#app",
+            // data is used to store our variables
+             //data stores values that vue shows and updates on the screen
+            //  data returns an object containing values you want displayed in html
             data: {
                 fname: "",
                 email: "",
@@ -129,6 +135,7 @@
             },
             methods: {
                 async registerUser() {
+                    // async used to handle operations that take time without blocking your program
                     // this is a keyword used to reference different variables in the data
                     if (this.fname == "" || this.email == "" || this.password == "") {
                         this.alertErrorShow = true;
